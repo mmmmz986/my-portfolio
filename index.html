@@ -3,83 +3,194 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>내 포트폴리오</title>
+  <meta name="description" content="시스템, 네트워크, AI, 임베디드 프로젝트를 만드는 개발자 이명진의 포트폴리오입니다.">
+  <meta name="theme-color" content="#f6fbff">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="이명진 | Developer Portfolio">
+  <meta property="og:description" content="안녕하세요, 개발자 이명진입니다.">
+  <meta property="og:image" content="og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="이명진 | Developer Portfolio">
+  <meta name="twitter:description" content="Systems · Networking · AI · Embedded">
+  <meta name="twitter:image" content="og.png">
+  <title>이명진 | Developer Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
 
-  <!-- 내비게이션 바 -->
   <header class="navbar">
-    <div class="logo">PORTFOLIO</div>
-    <nav class="nav-links">
+    <a class="logo" href="#home" aria-label="첫 화면으로 이동">
+      <span class="logo-mark">MJ</span>
+      <span>PORTFOLIO</span>
+    </a>
+    <nav class="nav-links" aria-label="주요 메뉴">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- 히로(Hero) 섹션 -->
-  <section class="hero" id="about">
-    <div class="hero-content">
-      <h1>안녕하세요, <br><span class="highlight">개발자 홍길동</span>입니다.</h1>
-      <p>사용자 경험을 최우선으로 생각하는 프론트엔드 개발자입니다.</p>
-      <a href="#projects" class="btn">프로젝트 보기</a>
-    </div>
-  </section>
-
-  <!-- 프로젝트 섹션 (반응형 그리드) -->
-  <section class="projects-section" id="projects">
-    <h2>Featured Projects</h2>
-    <div class="project-grid">
-      
-      <!-- 프로젝트 카드 1 -->
-      <article class="project-card">
-        <div class="card-image"></div>
-        <div class="card-content">
-          <h3>프로젝트 제목 1</h3>
-          <p>프로젝트에 대한 간단한 설명이 들어갑니다. 어떤 기술을 썼는지 적어주세요.</p>
-          <div class="tags">
-            <span>React</span>
-            <span>TypeScript</span>
-          </div>
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> Developer Portfolio · 2026</p>
+        <h1>안녕하세요,<br><strong>개발자 이명진</strong>입니다.</h1>
+        <p class="hero-description">
+          호기심을 코드로 풀어내는 개발자입니다.<br>
+          C/C++, C#, Python으로 네트워크부터 AI와 임베디드까지 즐겁게 만들어가고 있습니다.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">프로젝트 살펴보기 <span aria-hidden="true">↘</span></a>
+          <a class="button button-ghost" href="https://marin0806.tistory.com/" target="_blank" rel="noopener noreferrer">기술 블로그 <span aria-hidden="true">↗</span></a>
         </div>
-      </article>
+      </div>
 
-      <!-- 프로젝트 카드 2 -->
-      <article class="project-card">
-        <div class="card-image"></div>
-        <div class="card-content">
-          <h3>프로젝트 제목 2</h3>
-          <p>프로젝트에 대한 간단한 설명이 들어갑니다. 주요 성과나 기능 위주로 적습니다.</p>
-          <div class="tags">
-            <span>Vue.js</span>
-            <span>Tailwind</span>
-          </div>
+      <aside class="hero-panel" aria-label="개발 분야">
+        <div class="panel-top">
+          <span class="status-dot"></span>
+          <span>PROFILE / MJ</span>
+          <span class="panel-index">01</span>
         </div>
-      </article>
-
-      <!-- 프로젝트 카드 3 -->
-      <article class="project-card">
-        <div class="card-image"></div>
-        <div class="card-content">
-          <h3>프로젝트 제목 3</h3>
-          <p>프로젝트에 대한 간단한 설명이 들어갑니다. 수치화된 성과가 있다면 좋습니다.</p>
-          <div class="tags">
-            <span>Next.js</span>
-            <span>Node.js</span>
-          </div>
+        <div class="code-window" aria-hidden="true">
+          <p><span class="code-key">const</span> developer = {</p>
+          <p class="indent"><span class="code-name">name</span>: <span class="code-value">"이명진"</span>,</p>
+          <p class="indent"><span class="code-name">focus</span>: [</p>
+          <p class="indent-2"><span class="code-value">"Systems"</span>, <span class="code-value">"AI"</span>,</p>
+          <p class="indent-2"><span class="code-value">"Network"</span>, <span class="code-value">"Embedded"</span></p>
+          <p class="indent">],</p>
+          <p class="indent"><span class="code-name">projects</span>: <span class="code-number">7</span></p>
+          <p>};</p>
         </div>
-      </article>
+        <div class="skill-row" aria-label="주요 기술">
+          <span>C / C++</span><span>C# / .NET</span><span>Python</span><span>Qt</span>
+        </div>
+      </aside>
+    </section>
 
-    </div>
-  </section>
+    <section class="about section-shell" id="about">
+      <div class="section-heading">
+        <p class="section-number">01 / ABOUT</p>
+        <h2>I am,</h2>
+      </div>
+      <div class="about-content">
+        <p>
+          화면에 보이는 기능뿐 아니라 데이터가 흐르는 과정과 장치가 반응하는 순간까지 고민합니다.
+          서버·클라이언트 통신, 데스크톱 UI, 데이터베이스, 영상 인식과 하드웨어 제어를 연결하며
+          하나의 완성된 시스템을 만드는 경험을 쌓고 있습니다.
+        </p>
+        <dl class="profile-list">
+          <div><dt>Name</dt><dd>이명진</dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:lmz980806@gmail.com">lmz980806@gmail.com</a></dd></div>
+          <div><dt>Blog</dt><dd><a href="https://marin0806.tistory.com/" target="_blank" rel="noopener noreferrer">marin0806.tistory.com <span aria-hidden="true">↗</span></a></dd></div>
+        </dl>
+      </div>
+    </section>
 
-  <!-- 푸터 / 컨택트 섹션 -->
+    <section class="projects-section section-shell" id="projects">
+      <div class="section-heading projects-heading">
+        <div>
+          <p class="section-number">02 / SELECTED PROJECTS</p>
+          <h2>My Project,</h2>
+        </div>
+        <p class="project-count"><strong>07</strong> Projects</p>
+      </div>
+
+      <div class="project-list">
+        <article class="project-card featured">
+          <div class="project-number">01</div>
+          <div class="project-main">
+            <p class="project-type">PYTHON · CONSOLE APPLICATION</p>
+            <h3>PC-Kiosk</h3>
+            <p>PC방 회원·비회원 로그인부터 시간 충전, 음식 주문, 장바구니와 결제까지 구현한 콘솔 키오스크 시뮬레이터입니다.</p>
+            <div class="tags"><span>Python</span><span>CLI</span><span>UX Flow</span></div>
+          </div>
+          <a class="project-link" href="https://github.com/mmmmz986/PC-Kiosk" target="_blank" rel="noopener noreferrer" aria-label="PC-Kiosk GitHub 저장소 열기">GitHub <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-number">02</div>
+          <div class="project-main">
+            <p class="project-type">C · TERMINAL GAME</p>
+            <h3>DICE-RPG</h3>
+            <p>주사위 판정, 직업별 원정대, 무작위 이벤트와 5개 던전으로 구성한 Linux 터미널 로그라이크 RPG입니다.</p>
+            <div class="tags"><span>C</span><span>Game Logic</span><span>Linux</span></div>
+          </div>
+          <a class="project-link" href="https://github.com/mmmmz986/DICE-RPG" target="_blank" rel="noopener noreferrer" aria-label="DICE-RPG GitHub 저장소 열기">GitHub <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-number">03</div>
+          <div class="project-main">
+            <p class="project-type">QT · TCP MULTIPLAYER</p>
+            <h3>LiarGame</h3>
+            <p>회원·채팅·게임방·투표 시스템과 서버 주도 게임 진행을 구현한 Qt 기반 멀티플레이 라이어 게임입니다.</p>
+            <div class="tags"><span>C++</span><span>Qt 6</span><span>TCP</span><span>MySQL</span></div>
+          </div>
+          <a class="project-link" href="https://github.com/mmmmz986/LiarGame" target="_blank" rel="noopener noreferrer" aria-label="LiarGame GitHub 저장소 열기">GitHub <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-number">04</div>
+          <div class="project-main">
+            <p class="project-type">VISION · EMBEDDED</p>
+            <h3>SmartHome</h3>
+            <p>Qt와 OpenCV 얼굴 인식 결과를 Bluetooth·Serial 통신으로 Arduino 도어락과 연결한 스마트홈 프로토타입입니다.</p>
+            <div class="tags"><span>C++</span><span>OpenCV</span><span>Arduino</span><span>Qt</span></div>
+          </div>
+          <a class="project-link" href="https://github.com/mmmmz986/HomeCare" target="_blank" rel="noopener noreferrer" aria-label="SmartHome GitHub 저장소 열기">GitHub <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-number">05</div>
+          <div class="project-main">
+            <p class="project-type">.NET · NETWORK GAME</p>
+            <h3>MCO_Park</h3>
+            <p>서버 권위형 물리 처리와 실시간 상태 동기화로 여러 사용자가 함께 진행하는 WinForms 협동 플랫폼 게임입니다.</p>
+            <div class="tags"><span>C#</span><span>.NET 9</span><span>WinForms</span><span>TCP</span></div>
+          </div>
+          <a class="project-link" href="https://github.com/mmmmz986/MCO_PARK" target="_blank" rel="noopener noreferrer" aria-label="MCO Park GitHub 저장소 열기">GitHub <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-number">06</div>
+          <div class="project-main">
+            <p class="project-type">AI · INDUSTRIAL VISION</p>
+            <h3>MFC_Project</h3>
+            <p>Basler 카메라와 MFC 클라이언트, C# 중계 서버, Python YOLO 추론을 연결한 제품 품질 검사 시스템입니다.</p>
+            <div class="tags"><span>MFC</span><span>C#</span><span>YOLO</span><span>OpenCV</span></div>
+          </div>
+          <a class="project-link" href="https://github.com/mmmmz986/MFC_Project" target="_blank" rel="noopener noreferrer" aria-label="MFC Project GitHub 저장소 열기">GitHub <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-number">07</div>
+          <div class="project-main">
+            <p class="project-type">WPF · ROBOT CONTROL</p>
+            <h3>WPF_RCS</h3>
+            <p>WPF 원격 제어 UI와 C# 라우팅 서버, Python DOBOT 제어를 통합한 차량 원격 제어 시스템입니다.</p>
+            <div class="tags"><span>WPF</span><span>.NET 8</span><span>Python</span><span>MySQL</span></div>
+          </div>
+          <a class="project-link" href="https://github.com/mmmmz986/WPF_RCS" target="_blank" rel="noopener noreferrer" aria-label="WPF RCS GitHub 저장소 열기">GitHub <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer" id="contact">
-    <p>Get in Touch!</p>
-    <a href="mailto:your-email@example.com" class="email">your-email@example.com</a>
-    <p class="copyright">&copy; 2026 Hong Gil-Dong. All rights reserved.</p>
+    <div class="footer-inner">
+      <p class="section-number">03 / CONTACT</p>
+      <h2>For Contact,<br><a href="mailto:lmz980806@gmail.com">편하게 연락해주세요.</a></h2>
+      <div class="footer-links">
+        <a href="mailto:lmz980806@gmail.com">lmz980806@gmail.com <span aria-hidden="true">↗</span></a>
+        <a href="https://marin0806.tistory.com/" target="_blank" rel="noopener noreferrer">Tistory Blog <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Lee Myeongjin</span>
+        <a href="#home">Back to top ↑</a>
+      </div>
+    </div>
   </footer>
-
 </body>
 </html>
