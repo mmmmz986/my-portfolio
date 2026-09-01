@@ -103,15 +103,21 @@ a {
 }
 
 .logo-mark {
-  display: grid;
+  display: block;
   width: 34px;
   height: 34px;
-  place-items: center;
-  color: #ffffff;
-  background: var(--cyan);
-  border-radius: 2px;
-  font-weight: 700;
-  letter-spacing: -0.05em;
+  overflow: hidden;
+  background: #087b9e;
+  border-radius: 3px;
+  box-shadow: 0 5px 14px rgba(23, 128, 171, 0.18);
+}
+
+.logo-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(2.7);
 }
 
 .nav-links {
@@ -514,6 +520,113 @@ a {
   font-size: 0.92rem;
 }
 
+.project-preview {
+  width: min(100%, 520px);
+  margin-top: 1.4rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 14px 34px rgba(42, 96, 134, 0.13);
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  width: min(100%, 860px);
+  margin-top: 1.4rem;
+}
+
+.project-gallery > .project-preview {
+  width: 100%;
+  margin-top: 0;
+}
+
+.project-gallery--three > .project-preview:first-child {
+  grid-column: 1 / -1;
+  width: min(100%, 520px);
+}
+
+.project-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 419 / 349;
+  object-fit: contain;
+  background: #25071e;
+}
+
+.project-preview--dice img {
+  aspect-ratio: 567 / 492;
+  background: #171717;
+}
+
+.project-preview--liar-game img {
+  aspect-ratio: 533 / 371;
+  background: #331d08;
+}
+
+.project-preview--liar-main img {
+  aspect-ratio: 780 / 554;
+  background: #3d200b;
+}
+
+.project-preview--liar-play img {
+  aspect-ratio: 543 / 386;
+  background: #3d200b;
+}
+
+.project-preview--smart-home img,
+.project-preview--wpf-rcs img {
+  aspect-ratio: 4 / 5;
+}
+
+.project-preview--smart-home img {
+  background: #454545;
+}
+
+.project-preview--smart-dashboard img {
+  aspect-ratio: 720 / 400;
+  background: #f5f3f3;
+}
+
+.project-preview--mco-park img {
+  aspect-ratio: 550 / 308;
+  background: #ffffff;
+}
+
+.project-preview--mco-end img {
+  aspect-ratio: 968 / 604;
+  background: #171717;
+}
+
+.project-preview--mfc-canscan img {
+  aspect-ratio: 1272 / 864;
+  background: #f4f4f4;
+}
+
+.project-preview--wpf-rcs img {
+  background: #111111;
+}
+
+.project-preview--wpf-dobot img {
+  aspect-ratio: 812 / 432;
+  background: #ffffff;
+}
+
+.project-preview--wpf-map img {
+  aspect-ratio: 785 / 431;
+  background: #7e6751;
+}
+
+.project-preview figcaption {
+  padding: 0.7rem 0.9rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  font-size: 0.72rem;
+}
+
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -621,6 +734,35 @@ a {
   text-decoration: none;
 }
 
+[data-copy-email] {
+  cursor: copy;
+}
+
+.copy-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 50;
+  max-width: calc(100vw - 36px);
+  padding: 0.85rem 1.1rem;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(20, 49, 74, 0.94);
+  box-shadow: 0 14px 36px rgba(20, 49, 74, 0.24);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 12px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.copy-toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
@@ -698,6 +840,15 @@ a {
   .project-link {
     grid-column: 2;
     justify-self: start;
+  }
+
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .project-gallery--three > .project-preview:first-child {
+    grid-column: auto;
+    width: 100%;
   }
 
   .profile-list div {

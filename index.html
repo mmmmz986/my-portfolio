@@ -21,7 +21,9 @@
 
   <header class="navbar">
     <a class="logo" href="#home" aria-label="첫 화면으로 이동">
-      <span class="logo-mark">MJ</span>
+      <span class="logo-mark" aria-hidden="true">
+        <img src="assets/github.png" alt="">
+      </span>
       <span>PORTFOLIO</span>
     </a>
     <nav class="nav-links" aria-label="주요 메뉴">
@@ -82,7 +84,7 @@
         </p>
         <dl class="profile-list">
           <div><dt>Name</dt><dd>이명진</dd></div>
-          <div><dt>Email</dt><dd><a href="mailto:lmz980806@gmail.com">lmz980806@gmail.com</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:lmz980806@gmail.com" data-copy-email="lmz980806@gmail.com" title="클릭하여 이메일 복사">lmz980806@gmail.com</a></dd></div>
           <div><dt>Blog</dt><dd><a href="https://marin0806.tistory.com/" target="_blank" rel="noopener noreferrer">marin0806.tistory.com <span aria-hidden="true">↗</span></a></dd></div>
         </dl>
       </div>
@@ -104,6 +106,10 @@
             <p class="project-type">PYTHON · CONSOLE APPLICATION</p>
             <h3>PC-Kiosk</h3>
             <p>PC방 회원·비회원 로그인부터 시간 충전, 음식 주문, 장바구니와 결제까지 구현한 콘솔 키오스크 시뮬레이터입니다.</p>
+            <figure class="project-preview">
+              <img src="assets/pc-kiosk-login.png" alt="PC-Kiosk 콘솔 로그인 화면">
+              <figcaption>회원·비회원 로그인을 선택할 수 있는 PC-Kiosk 시작 화면</figcaption>
+            </figure>
             <div class="tags"><span>Python</span><span>CLI</span><span>UX Flow</span></div>
           </div>
           <a class="project-link" href="https://github.com/mmmmz986/PC-Kiosk" target="_blank" rel="noopener noreferrer" aria-label="PC-Kiosk GitHub 저장소 열기">GitHub <span aria-hidden="true">↗</span></a>
@@ -115,6 +121,10 @@
             <p class="project-type">C · TERMINAL GAME</p>
             <h3>DICE-RPG</h3>
             <p>주사위 판정, 직업별 원정대, 무작위 이벤트와 5개 던전으로 구성한 Linux 터미널 로그라이크 RPG입니다.</p>
+            <figure class="project-preview project-preview--dice">
+              <img src="assets/dice-rpg-title.png" alt="DICE-RPG 콘솔 시작 화면">
+              <figcaption>ASCII 아트로 구성한 DICE-RPG 시작 화면</figcaption>
+            </figure>
             <div class="tags"><span>C</span><span>Game Logic</span><span>Linux</span></div>
           </div>
           <a class="project-link" href="https://github.com/mmmmz986/DICE-RPG" target="_blank" rel="noopener noreferrer" aria-label="DICE-RPG GitHub 저장소 열기">GitHub <span aria-hidden="true">↗</span></a>
@@ -126,6 +136,20 @@
             <p class="project-type">QT · TCP MULTIPLAYER</p>
             <h3>LiarGame</h3>
             <p>회원·채팅·게임방·투표 시스템과 서버 주도 게임 진행을 구현한 Qt 기반 멀티플레이 라이어 게임입니다.</p>
+            <div class="project-gallery project-gallery--three">
+              <figure class="project-preview project-preview--liar-game">
+                <img src="assets/liar-game-login.png" alt="LiarGame 로그인 화면">
+                <figcaption>게임 콘셉트를 담은 LiarGame 로그인 화면</figcaption>
+              </figure>
+              <figure class="project-preview project-preview--liar-main">
+                <img src="assets/liar-game-main.png" alt="LiarGame 메인 대기실 화면">
+                <figcaption>방 생성·입장 기능을 제공하는 LiarGame 메인 화면</figcaption>
+              </figure>
+              <figure class="project-preview project-preview--liar-play">
+                <img src="assets/liar-game-game.png" alt="LiarGame 게임 진행 화면">
+                <figcaption>채팅과 참여자 목록을 함께 보여주는 게임 진행 화면</figcaption>
+              </figure>
+            </div>
             <div class="tags"><span>C++</span><span>Qt 6</span><span>TCP</span><span>MySQL</span></div>
           </div>
           <a class="project-link" href="https://github.com/mmmmz986/LiarGame" target="_blank" rel="noopener noreferrer" aria-label="LiarGame GitHub 저장소 열기">GitHub <span aria-hidden="true">↗</span></a>
@@ -137,6 +161,16 @@
             <p class="project-type">VISION · EMBEDDED</p>
             <h3>SmartHome</h3>
             <p>Qt와 OpenCV 얼굴 인식 결과를 Bluetooth·Serial 통신으로 Arduino 도어락과 연결한 스마트홈 프로토타입입니다.</p>
+            <div class="project-gallery">
+              <figure class="project-preview project-preview--smart-home">
+                <img src="assets/smart-home-showcase.png" alt="SmartHome 전시용 하드웨어 프로토타입">
+                <figcaption>센서와 제어 장치를 통합한 SmartHome 전시 프로토타입</figcaption>
+              </figure>
+              <figure class="project-preview project-preview--smart-dashboard">
+                <img src="assets/smart-home-dashboard.png" alt="SmartHome 통합 대시보드">
+                <figcaption>온도·습도·가스·반려동물 상태를 확인하는 통합 대시보드</figcaption>
+              </figure>
+            </div>
             <div class="tags"><span>C++</span><span>OpenCV</span><span>Arduino</span><span>Qt</span></div>
           </div>
           <a class="project-link" href="https://github.com/mmmmz986/HomeCare" target="_blank" rel="noopener noreferrer" aria-label="SmartHome GitHub 저장소 열기">GitHub <span aria-hidden="true">↗</span></a>
@@ -148,6 +182,16 @@
             <p class="project-type">.NET · NETWORK GAME</p>
             <h3>MCO_Park</h3>
             <p>서버 권위형 물리 처리와 실시간 상태 동기화로 여러 사용자가 함께 진행하는 WinForms 협동 플랫폼 게임입니다.</p>
+            <div class="project-gallery">
+              <figure class="project-preview project-preview--mco-park">
+                <img src="assets/mco-park-login.png" alt="MCO_Park 닉네임 입력 및 로그인 화면">
+                <figcaption>픽셀 아트로 구성한 MCO_Park 시작 화면</figcaption>
+              </figure>
+              <figure class="project-preview project-preview--mco-end">
+                <img src="assets/mco-park-end.png" alt="MCO_Park 게임 클리어 화면">
+                <figcaption>협동 플레이를 완료한 뒤 표시되는 게임 클리어 화면</figcaption>
+              </figure>
+            </div>
             <div class="tags"><span>C#</span><span>.NET 9</span><span>WinForms</span><span>TCP</span></div>
           </div>
           <a class="project-link" href="https://github.com/mmmmz986/MCO_PARK" target="_blank" rel="noopener noreferrer" aria-label="MCO Park GitHub 저장소 열기">GitHub <span aria-hidden="true">↗</span></a>
@@ -157,11 +201,15 @@
           <div class="project-number">06</div>
           <div class="project-main">
             <p class="project-type">AI · INDUSTRIAL VISION</p>
-            <h3>MFC_Project</h3>
+            <h3>MFC_CanScan</h3>
             <p>Basler 카메라와 MFC 클라이언트, C# 중계 서버, Python YOLO 추론을 연결한 제품 품질 검사 시스템입니다.</p>
+            <figure class="project-preview project-preview--mfc-canscan">
+              <img src="assets/mfc-canscan-inspection.png" alt="MFC_CanScan 캔 불량 검사 화면">
+              <figcaption>카메라 영상과 판정 결과를 보여주는 MFC_CanScan 검사 화면</figcaption>
+            </figure>
             <div class="tags"><span>MFC</span><span>C#</span><span>YOLO</span><span>OpenCV</span></div>
           </div>
-          <a class="project-link" href="https://github.com/mmmmz986/MFC_Project" target="_blank" rel="noopener noreferrer" aria-label="MFC Project GitHub 저장소 열기">GitHub <span aria-hidden="true">↗</span></a>
+          <a class="project-link" href="https://github.com/mmmmz986/MFC_Project" target="_blank" rel="noopener noreferrer" aria-label="MFC CanScan GitHub 저장소 열기">GitHub <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="project-card">
@@ -170,6 +218,20 @@
             <p class="project-type">WPF · ROBOT CONTROL</p>
             <h3>WPF_RCS</h3>
             <p>WPF 원격 제어 UI와 C# 라우팅 서버, Python DOBOT 제어를 통합한 차량 원격 제어 시스템입니다.</p>
+            <div class="project-gallery project-gallery--three">
+              <figure class="project-preview project-preview--wpf-rcs">
+                <img src="assets/wpf-rcs-dashboard.png" alt="WPF_RCS 차량 원격 제어 대시보드">
+                <figcaption>차량 상태와 원격 제어 기능을 구성한 WPF_RCS 대시보드</figcaption>
+              </figure>
+              <figure class="project-preview project-preview--wpf-dobot">
+                <img src="assets/wpf-rcs-dobot.png" alt="WPF_RCS에서 제어하는 DOBOT 이동 로봇">
+                <figcaption>원격 제어 대상으로 사용한 DOBOT 이동 로봇</figcaption>
+              </figure>
+              <figure class="project-preview project-preview--wpf-map">
+                <img src="assets/wpf-rcs-map.png" alt="WPF_RCS 로봇 주행 맵">
+                <figcaption>다중 로봇 주행과 경로 제어를 검증한 테스트 맵</figcaption>
+              </figure>
+            </div>
             <div class="tags"><span>WPF</span><span>.NET 8</span><span>Python</span><span>MySQL</span></div>
           </div>
           <a class="project-link" href="https://github.com/mmmmz986/WPF_RCS" target="_blank" rel="noopener noreferrer" aria-label="WPF RCS GitHub 저장소 열기">GitHub <span aria-hidden="true">↗</span></a>
@@ -181,9 +243,9 @@
   <footer class="footer" id="contact">
     <div class="footer-inner">
       <p class="section-number">03 / CONTACT</p>
-      <h2>For Contact,<br><a href="mailto:lmz980806@gmail.com">편하게 연락해주세요.</a></h2>
+      <h2>For Contact,<br><a href="mailto:lmz980806@gmail.com" data-copy-email="lmz980806@gmail.com" title="클릭하여 이메일 복사">편하게 연락해주세요.</a></h2>
       <div class="footer-links">
-        <a href="mailto:lmz980806@gmail.com">lmz980806@gmail.com <span aria-hidden="true">↗</span></a>
+        <a href="mailto:lmz980806@gmail.com" data-copy-email="lmz980806@gmail.com" title="클릭하여 이메일 복사">lmz980806@gmail.com <span aria-hidden="true">⧉</span></a>
         <a href="https://marin0806.tistory.com/" target="_blank" rel="noopener noreferrer">Tistory Blog <span aria-hidden="true">↗</span></a>
       </div>
       <div class="footer-bottom">
@@ -192,5 +254,53 @@
       </div>
     </div>
   </footer>
+  <div class="copy-toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script>
+    (() => {
+      const toast = document.querySelector('.copy-toast');
+      let toastTimer;
+
+      const fallbackCopy = (text) => {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        const copied = document.execCommand('copy');
+        textarea.remove();
+        return copied;
+      };
+
+      const showToast = (message) => {
+        window.clearTimeout(toastTimer);
+        toast.textContent = message;
+        toast.classList.add('is-visible');
+        toastTimer = window.setTimeout(() => {
+          toast.classList.remove('is-visible');
+        }, 2200);
+      };
+
+      document.querySelectorAll('[data-copy-email]').forEach((link) => {
+        link.addEventListener('click', async (event) => {
+          event.preventDefault();
+          const email = link.dataset.copyEmail;
+
+          try {
+            if (navigator.clipboard && window.isSecureContext) {
+              await navigator.clipboard.writeText(email);
+            } else if (!fallbackCopy(email)) {
+              throw new Error('Clipboard unavailable');
+            }
+
+            showToast(`이메일 주소가 복사되었습니다 · ${email}`);
+          } catch (error) {
+            window.location.href = `mailto:${email}`;
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
