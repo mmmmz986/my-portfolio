@@ -100,9 +100,9 @@
         <p class="project-count"><strong>07</strong> Projects</p>
       </div>
 
-      <div class="project-tabs" role="tablist" aria-label="프로젝트 분류">
-        <button class="project-tab is-active" type="button" role="tab" id="tab-lms" aria-controls="panel-lms" aria-selected="true">LMS 과정</button>
-        <button class="project-tab" type="button" role="tab" id="tab-work" aria-controls="panel-work" aria-selected="false" tabindex="-1">직장</button>
+      <div class="tab-list" role="tablist" aria-label="프로젝트 분류" data-count-target=".project-count strong">
+        <button class="tab is-active" type="button" role="tab" id="tab-lms" aria-controls="panel-lms" aria-selected="true">LMS 과정</button>
+        <button class="tab" type="button" role="tab" id="tab-work" aria-controls="panel-work" aria-selected="false" tabindex="-1">직장</button>
       </div>
 
       <div class="project-list project-panel" role="tabpanel" id="panel-lms" aria-labelledby="tab-lms" data-count="07">
@@ -254,26 +254,132 @@
         <p class="section-number">03 / SKILLS</p>
         <h2>Skill</h2>
       </div>
-      <div class="skill-groups">
-        <div class="skill-group">
-          <h3>Languages</h3>
-          <div class="tags"><span>C</span><span>C++</span><span>C#</span><span>Python</span></div>
+      <div class="skill-content">
+        <div class="tab-list" role="tablist" aria-label="기술 분류">
+          <button class="tab is-active" type="button" role="tab" id="tab-lang" aria-controls="panel-lang" aria-selected="true">Language</button>
+          <button class="tab" type="button" role="tab" id="tab-fw" aria-controls="panel-fw" aria-selected="false" tabindex="-1">Framework</button>
+          <button class="tab" type="button" role="tab" id="tab-net" aria-controls="panel-net" aria-selected="false" tabindex="-1">Network</button>
+          <button class="tab" type="button" role="tab" id="tab-db" aria-controls="panel-db" aria-selected="false" tabindex="-1">Database</button>
+          <button class="tab" type="button" role="tab" id="tab-scm" aria-controls="panel-scm" aria-selected="false" tabindex="-1">SCM</button>
+          <button class="tab" type="button" role="tab" id="tab-vibe" aria-controls="panel-vibe" aria-selected="false" tabindex="-1">VibeCoding</button>
+          <button class="tab" type="button" role="tab" id="tab-domain" aria-controls="panel-domain" aria-selected="false" tabindex="-1">Domain</button>
         </div>
-        <div class="skill-group">
-          <h3>Desktop / UI</h3>
-          <div class="tags"><span>Qt 6</span><span>MFC</span><span>WPF</span><span>WinForms</span><span>.NET 8 / 9</span></div>
+
+        <div class="skill-panel" role="tabpanel" id="panel-lang" aria-labelledby="tab-lang">
+          <dl class="skill-list">
+            <div>
+              <dt>C</dt>
+              <dd>포인터와 메모리 구조를 이해하며 Linux 터미널 환경의 콘솔 프로그램을 작성합니다. 주사위 판정·던전 진행 로직을 갖춘 DICE-RPG를 C로 구현했습니다.</dd>
+            </div>
+            <div>
+              <dt>C++</dt>
+              <dd>클래스 설계와 STL을 활용해 Qt 데스크톱 애플리케이션과 MFC 클라이언트를 개발합니다. OpenCV 영상 처리와 TCP 서버·클라이언트 통신을 C++로 구현했습니다.</dd>
+            </div>
+            <div>
+              <dt>C#</dt>
+              <dd>.NET 환경에서 WinForms·WPF 클라이언트와 TCP 중계·라우팅 서버를 개발합니다. async/await 기반 비동기 처리로 여러 클라이언트의 요청을 동시에 다룹니다.</dd>
+            </div>
+            <div>
+              <dt>Python</dt>
+              <dd>콘솔 애플리케이션부터 YOLO 추론 서버, DOBOT 로봇 제어 스크립트까지 빠르게 구현합니다. 다른 언어로 만든 시스템과 소켓으로 연동하는 모듈을 주로 담당했습니다.</dd>
+            </div>
+          </dl>
         </div>
-        <div class="skill-group">
-          <h3>Network / Data</h3>
-          <div class="tags"><span>TCP/IP</span><span>Serial</span><span>Bluetooth</span><span>MySQL</span></div>
+        <div class="skill-panel" role="tabpanel" id="panel-fw" aria-labelledby="tab-fw" hidden>
+          <dl class="skill-list">
+            <div>
+              <dt>MFC</dt>
+              <dd>Win32 메시지 구조를 바탕으로 대화상자 기반 UI를 구성합니다. Basler 카메라 영상을 실시간으로 표시하고 검사 결과를 보여주는 MFC_CanScan 클라이언트를 개발했습니다.</dd>
+            </div>
+            <div>
+              <dt>WPF</dt>
+              <dd>XAML 레이아웃과 데이터 바인딩, MVVM 패턴으로 화면과 로직을 분리합니다. 차량 상태 표시와 원격 제어 기능을 갖춘 WPF_RCS 대시보드를 구현했습니다.</dd>
+            </div>
+            <div>
+              <dt>Qt</dt>
+              <dd>Signal/Slot과 QTcpSocket을 활용해 네트워크 기반 GUI 애플리케이션을 만듭니다. Qt 6로 멀티플레이 LiarGame과 SmartHome 통합 대시보드를 개발했습니다.</dd>
+            </div>
+            <div>
+              <dt>WinForms</dt>
+              <dd>이벤트 기반 폼 UI와 GDI+ 렌더링으로 빠르게 프로토타입을 만듭니다. 서버와 실시간으로 상태를 동기화하는 협동 게임 MCO_Park를 개발했습니다.</dd>
+            </div>
+          </dl>
         </div>
-        <div class="skill-group">
-          <h3>AI / Vision / Embedded</h3>
-          <div class="tags"><span>OpenCV</span><span>YOLO</span><span>Basler Camera</span><span>Arduino</span><span>DOBOT</span></div>
+        <div class="skill-panel" role="tabpanel" id="panel-net" aria-labelledby="tab-net" hidden>
+          <dl class="skill-list">
+            <div>
+              <dt>TCP</dt>
+              <dd>연결 지향 소켓으로 서버·클라이언트 구조를 설계하고, 메시지 경계를 구분하는 패킷 프로토콜을 직접 정의합니다. 채팅·게임방·실시간 상태 동기화와 이기종 시스템 중계 서버를 TCP로 구현했습니다.</dd>
+            </div>
+            <div>
+              <dt>UDP</dt>
+              <dd>비연결형 데이터그램의 특성을 이해하고, 손실과 순서 뒤바뀜을 감안해 빠른 전송이 필요한 데이터에 활용합니다. 브로드캐스트를 이용한 장치 탐색과 짧은 상태 메시지 전송에 적용할 수 있습니다.</dd>
+            </div>
+          </dl>
         </div>
-        <div class="skill-group">
-          <h3>Environment</h3>
-          <div class="tags"><span>Linux</span><span>Git / GitHub</span></div>
+        <div class="skill-panel" role="tabpanel" id="panel-db" aria-labelledby="tab-db" hidden>
+          <dl class="skill-list">
+            <div>
+              <dt>MySQL</dt>
+              <dd>회원·게임방·로봇 상태 등 서비스 데이터를 테이블로 설계하고, JOIN과 인덱스를 고려한 쿼리를 작성합니다. LiarGame과 WPF_RCS에서 서버와 연동해 데이터를 저장·조회했습니다.</dd>
+            </div>
+            <div>
+              <dt>PostgreSQL</dt>
+              <dd>표준 SQL과 트랜잭션, 제약 조건을 활용해 데이터 무결성을 지키는 스키마를 설계합니다. JSON 타입 등 PostgreSQL의 확장 기능을 이해하고 활용합니다.</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="skill-panel" role="tabpanel" id="panel-scm" aria-labelledby="tab-scm" hidden>
+          <dl class="skill-list">
+            <div>
+              <dt>GitHub</dt>
+              <dd>프로젝트마다 원격 저장소를 만들어 관리하고, README에 기능·실행 방법·화면을 정리해 둡니다. Issue와 Pull Request로 작업 단위를 나눠 진행 상황을 남깁니다.</dd>
+            </div>
+            <div>
+              <dt>Fork</dt>
+              <dd>팀·오픈소스 저장소는 Fork 후 upstream을 remote로 등록해 fetch·rebase로 최신 상태를 맞추고, 내 저장소의 브랜치에서 작업한 뒤 Pull Request로 기여합니다.</dd>
+            </div>
+            <div>
+              <dt>Gitflow</dt>
+              <dd>main·develop을 기준으로 feature 브랜치에서 기능을 개발하고, release·hotfix 브랜치로 배포와 긴급 수정을 분리해 안정적인 이력을 유지합니다.</dd>
+            </div>
+            <div>
+              <dt>Stash</dt>
+              <dd>작업 도중 브랜치를 옮겨야 할 때 <code>git stash push -m</code>으로 메시지와 함께 임시 저장하고, <code>stash list</code>로 확인한 뒤 <code>pop</code>·<code>apply</code>로 복원합니다.</dd>
+            </div>
+            <div>
+              <dt>협업</dt>
+              <dd>feat·fix·refactor 같은 커밋 컨벤션으로 변경 의도를 드러내고, PR 코드 리뷰로 의견을 주고받습니다. 충돌이 나면 변경 내용을 팀원과 확인하며 merge·rebase로 해결합니다.</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="skill-panel" role="tabpanel" id="panel-vibe" aria-labelledby="tab-vibe" hidden>
+          <dl class="skill-list">
+            <div>
+              <dt>Harness Engineering</dt>
+              <dd>AI 코딩 에이전트가 프로젝트 맥락을 정확히 파악하도록 작업 환경을 설계합니다. 프로젝트 지침 문서(CLAUDE.md 등), 권한 설정, Hook, 재사용 가능한 Skill을 구성해 반복 작업을 자동화하고 결과물을 일관되게 유지합니다.</dd>
+            </div>
+            <div>
+              <dt>Coding Convention</dt>
+              <dd>네이밍, 파일 구조, 주석 스타일 같은 팀 컨벤션을 문서로 명시해 AI가 생성한 코드도 기존 코드와 같은 형태를 따르게 합니다. 생성된 코드는 리뷰와 린트로 다시 확인합니다.</dd>
+            </div>
+            <div>
+              <dt>Rules</dt>
+              <dd>작업 범위, 브랜치·커밋 규칙, 금지 사항 등 에이전트가 지켜야 할 규칙을 정해두고, 결과를 반드시 직접 검증한 뒤 반영합니다. AI를 도구로 쓰되 최종 판단과 책임은 개발자에게 있다는 원칙으로 작업합니다.</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="skill-panel" role="tabpanel" id="panel-domain" aria-labelledby="tab-domain" hidden>
+          <dl class="skill-list">
+            <div>
+              <dt>Semiconductor</dt>
+              <dd>웨이퍼 제조부터 패키징까지 이어지는 공정 흐름을 이해하고, 각 공정에서 필요한 비전 검사와 장비 제어 소프트웨어의 역할을 파악합니다. 미세 결함 검출의 정밀도, 장비 가동률 같은 현장의 요구사항을 고려해 개발합니다.</dd>
+            </div>
+            <div>
+              <dt>Secondary Battery</dt>
+              <dd>전극·조립·화성으로 이어지는 이차전지 제조 공정을 이해하고, 전극 코팅·셀 외관 같은 품질 검사 포인트를 파악합니다. 빠른 라인 속도에 맞춘 실시간 검사와 검사 데이터 관리를 고려해 시스템을 설계합니다.</dd>
+            </div>
+          </dl>
         </div>
       </div>
     </section>
@@ -296,29 +402,31 @@
   <div class="copy-toast" role="status" aria-live="polite" aria-atomic="true"></div>
   <script>
     (() => {
-      const tabs = Array.from(document.querySelectorAll('.project-tab'));
-      const projectCount = document.querySelector('.project-count strong');
+      document.querySelectorAll('.tab-list').forEach((tabList) => {
+        const tabs = Array.from(tabList.querySelectorAll('.tab'));
+        const countTarget = tabList.dataset.countTarget && document.querySelector(tabList.dataset.countTarget);
 
-      const selectTab = (tab) => {
-        tabs.forEach((other) => {
-          const selected = other === tab;
-          const panel = document.getElementById(other.getAttribute('aria-controls'));
-          other.classList.toggle('is-active', selected);
-          other.setAttribute('aria-selected', String(selected));
-          other.tabIndex = selected ? 0 : -1;
-          panel.hidden = !selected;
-          if (selected) projectCount.textContent = panel.dataset.count;
-        });
-      };
+        const selectTab = (tab) => {
+          tabs.forEach((other) => {
+            const selected = other === tab;
+            const panel = document.getElementById(other.getAttribute('aria-controls'));
+            other.classList.toggle('is-active', selected);
+            other.setAttribute('aria-selected', String(selected));
+            other.tabIndex = selected ? 0 : -1;
+            panel.hidden = !selected;
+            if (selected && countTarget) countTarget.textContent = panel.dataset.count;
+          });
+        };
 
-      tabs.forEach((tab, index) => {
-        tab.addEventListener('click', () => selectTab(tab));
-        tab.addEventListener('keydown', (event) => {
-          if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
-          const step = event.key === 'ArrowRight' ? 1 : -1;
-          const next = tabs[(index + step + tabs.length) % tabs.length];
-          selectTab(next);
-          next.focus();
+        tabs.forEach((tab, index) => {
+          tab.addEventListener('click', () => selectTab(tab));
+          tab.addEventListener('keydown', (event) => {
+            if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+            const step = event.key === 'ArrowRight' ? 1 : -1;
+            const next = tabs[(index + step + tabs.length) % tabs.length];
+            selectTab(next);
+            next.focus();
+          });
         });
       });
 

@@ -455,13 +455,14 @@ a {
   font-weight: 500;
 }
 
-.project-tabs {
+.tab-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
-.project-tab {
+.tab {
   min-height: 42px;
   padding: 0 1.1rem;
   color: var(--muted);
@@ -475,13 +476,13 @@ a {
   transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
-.project-tab:hover,
-.project-tab:focus-visible {
+.tab:hover,
+.tab:focus-visible {
   color: var(--text);
   border-color: var(--line-strong);
 }
 
-.project-tab.is-active {
+.tab.is-active {
   color: #ffffff;
   border-color: var(--cyan);
   background: var(--cyan);
@@ -506,34 +507,44 @@ a {
   border-top: 1px solid var(--line);
 }
 
-.skill-groups {
+.skill-panel {
   border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
-.skill-group {
+.skill-list div {
   display: grid;
-  grid-template-columns: 11rem 1fr;
+  grid-template-columns: 10rem 1fr;
   gap: 1rem;
-  align-items: center;
   padding: 1.15rem 0;
   border-bottom: 1px solid var(--line);
 }
 
-.skill-group h3 {
-  color: var(--muted);
+.skill-list div:last-child {
+  border-bottom: 0;
+}
+
+.skill-list dt {
+  color: var(--cyan);
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   font-weight: 500;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
-.skill-group .tags {
-  margin-top: 0;
+.skill-list dd {
+  color: #526f89;
+  font-size: 0.9rem;
+  line-height: 1.8;
 }
 
-.skill-group .tags span {
-  font-size: 0.7rem;
+.skill-list code {
+  padding: 0.05rem 0.35rem;
+  color: var(--text);
+  border-radius: 3px;
+  background: rgba(21, 148, 208, 0.08);
+  font-family: var(--mono);
+  font-size: 0.8em;
 }
 
 .project-card {
@@ -915,7 +926,7 @@ a {
   }
 
   .profile-list div,
-  .skill-group {
+  .skill-list div {
     grid-template-columns: 1fr;
     gap: 0.35rem;
   }
