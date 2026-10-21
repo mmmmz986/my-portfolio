@@ -760,21 +760,6 @@ a {
   letter-spacing: -0.055em;
 }
 
-.footer h2 a {
-  color: var(--cyan);
-  text-decoration: none;
-  background-image: linear-gradient(var(--cyan), var(--cyan));
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  background-size: 0 2px;
-  transition: background-size 260ms ease;
-}
-
-.footer h2 a:hover,
-.footer h2 a:focus-visible {
-  background-size: 100% 2px;
-}
-
 .footer-links {
   display: flex;
   flex-wrap: wrap;
