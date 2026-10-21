@@ -28,7 +28,8 @@
     </a>
     <nav class="nav-links" aria-label="주요 메뉴">
       <a href="#about">About</a>
-      <a href="#projects">Projects</a>
+      <a href="#projects">Project</a>
+      <a href="#skills">Skill</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -74,7 +75,7 @@
     <section class="about section-shell" id="about">
       <div class="section-heading">
         <p class="section-number">01 / ABOUT</p>
-        <h2>I am,</h2>
+        <h2>I am</h2>
       </div>
       <div class="about-content">
         <p>
@@ -94,12 +95,17 @@
       <div class="section-heading projects-heading">
         <div>
           <p class="section-number">02 / SELECTED PROJECTS</p>
-          <h2>My Project,</h2>
+          <h2>Project</h2>
         </div>
         <p class="project-count"><strong>07</strong> Projects</p>
       </div>
 
-      <div class="project-list">
+      <div class="project-tabs" role="tablist" aria-label="프로젝트 분류">
+        <button class="project-tab is-active" type="button" role="tab" id="tab-lms" aria-controls="panel-lms" aria-selected="true">LMS 과정</button>
+        <button class="project-tab" type="button" role="tab" id="tab-work" aria-controls="panel-work" aria-selected="false" tabindex="-1">직장</button>
+      </div>
+
+      <div class="project-list project-panel" role="tabpanel" id="panel-lms" aria-labelledby="tab-lms" data-count="07">
         <article class="project-card featured">
           <div class="project-number">01</div>
           <div class="project-main">
@@ -237,13 +243,46 @@
           <a class="project-link" href="https://github.com/mmmmz986/WPF_RCS" target="_blank" rel="noopener noreferrer" aria-label="WPF RCS GitHub 저장소 열기">GitHub <span aria-hidden="true">↗</span></a>
         </article>
       </div>
+
+      <div class="project-list project-panel" role="tabpanel" id="panel-work" aria-labelledby="tab-work" data-count="00" hidden>
+        <p class="project-empty">직장에서 진행한 프로젝트를 준비 중입니다.</p>
+      </div>
+    </section>
+
+    <section class="skills-section section-shell" id="skills">
+      <div class="section-heading">
+        <p class="section-number">03 / SKILLS</p>
+        <h2>Skill</h2>
+      </div>
+      <div class="skill-groups">
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <div class="tags"><span>C</span><span>C++</span><span>C#</span><span>Python</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>Desktop / UI</h3>
+          <div class="tags"><span>Qt 6</span><span>MFC</span><span>WPF</span><span>WinForms</span><span>.NET 8 / 9</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>Network / Data</h3>
+          <div class="tags"><span>TCP/IP</span><span>Serial</span><span>Bluetooth</span><span>MySQL</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>AI / Vision / Embedded</h3>
+          <div class="tags"><span>OpenCV</span><span>YOLO</span><span>Basler Camera</span><span>Arduino</span><span>DOBOT</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>Environment</h3>
+          <div class="tags"><span>Linux</span><span>Git / GitHub</span></div>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="footer" id="contact">
     <div class="footer-inner">
-      <p class="section-number">03 / CONTACT</p>
-      <h2>For Contact,<br><a href="mailto:lmz980806@gmail.com" data-copy-email="lmz980806@gmail.com" title="클릭하여 이메일 복사">편하게 연락해주세요.</a></h2>
+      <p class="section-number">04 / CONTACT</p>
+      <h2>For Contact<br><a href="mailto:lmz980806@gmail.com" data-copy-email="lmz980806@gmail.com" title="클릭하여 이메일 복사">편하게 연락해주세요.</a></h2>
       <div class="footer-links">
         <a href="mailto:lmz980806@gmail.com" data-copy-email="lmz980806@gmail.com" title="클릭하여 이메일 복사">lmz980806@gmail.com <span aria-hidden="true">⧉</span></a>
         <a href="https://marin0806.tistory.com/" target="_blank" rel="noopener noreferrer">Tistory Blog <span aria-hidden="true">↗</span></a>
@@ -257,6 +296,32 @@
   <div class="copy-toast" role="status" aria-live="polite" aria-atomic="true"></div>
   <script>
     (() => {
+      const tabs = Array.from(document.querySelectorAll('.project-tab'));
+      const projectCount = document.querySelector('.project-count strong');
+
+      const selectTab = (tab) => {
+        tabs.forEach((other) => {
+          const selected = other === tab;
+          const panel = document.getElementById(other.getAttribute('aria-controls'));
+          other.classList.toggle('is-active', selected);
+          other.setAttribute('aria-selected', String(selected));
+          other.tabIndex = selected ? 0 : -1;
+          panel.hidden = !selected;
+          if (selected) projectCount.textContent = panel.dataset.count;
+        });
+      };
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => selectTab(tab));
+        tab.addEventListener('keydown', (event) => {
+          if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+          const step = event.key === 'ArrowRight' ? 1 : -1;
+          const next = tabs[(index + step + tabs.length) % tabs.length];
+          selectTab(next);
+          next.focus();
+        });
+      });
+
       const toast = document.querySelector('.copy-toast');
       let toastTimer;
 

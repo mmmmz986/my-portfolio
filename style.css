@@ -455,8 +455,85 @@ a {
   font-weight: 500;
 }
 
+.project-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-tab {
+  min-height: 42px;
+  padding: 0 1.1rem;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: transparent;
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.project-tab:hover,
+.project-tab:focus-visible {
+  color: var(--text);
+  border-color: var(--line-strong);
+}
+
+.project-tab.is-active {
+  color: #ffffff;
+  border-color: var(--cyan);
+  background: var(--cyan);
+}
+
 .project-list {
   border-top: 1px solid var(--line);
+}
+
+.project-empty {
+  padding: 4rem 1.25rem;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+.skills-section {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(3rem, 9vw, 8rem);
+  border-top: 1px solid var(--line);
+}
+
+.skill-groups {
+  border-top: 1px solid var(--line);
+}
+
+.skill-group {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.skill-group h3 {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.skill-group .tags {
+  margin-top: 0;
+}
+
+.skill-group .tags span {
+  font-size: 0.7rem;
 }
 
 .project-card {
@@ -773,7 +850,8 @@ a {
     max-width: 600px;
   }
 
-  .about {
+  .about,
+  .skills-section {
     grid-template-columns: 1fr;
   }
 }
@@ -851,7 +929,8 @@ a {
     width: 100%;
   }
 
-  .profile-list div {
+  .profile-list div,
+  .skill-group {
     grid-template-columns: 1fr;
     gap: 0.35rem;
   }
