@@ -14,6 +14,11 @@
   <meta name="twitter:description" content="Systems · Networking · AI · Embedded">
   <meta name="twitter:image" content="og.png">
   <title>이명진 | Developer Portfolio</title>
+  <script>
+    try {
+      if (localStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+    } catch (error) {}
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,6 +36,10 @@
       <a href="#projects">Project</a>
       <a href="#skills">Skill</a>
       <a href="#contact">Contact</a>
+      <button class="theme-toggle" type="button" aria-label="다크 테마로 전환">
+        <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+        <span class="theme-toggle-label">Dark</span>
+      </button>
     </nav>
   </header>
 
@@ -402,6 +411,32 @@
   <div class="copy-toast" role="status" aria-live="polite" aria-atomic="true"></div>
   <script>
     (() => {
+      const themeToggle = document.querySelector('.theme-toggle');
+      const themeColor = document.querySelector('meta[name="theme-color"]');
+
+      const applyTheme = (theme) => {
+        const dark = theme === 'dark';
+        if (dark) {
+          document.documentElement.dataset.theme = 'dark';
+        } else {
+          delete document.documentElement.dataset.theme;
+        }
+        themeToggle.querySelector('.theme-toggle-icon').textContent = dark ? '☀' : '☾';
+        themeToggle.querySelector('.theme-toggle-label').textContent = dark ? 'White' : 'Dark';
+        themeToggle.setAttribute('aria-label', dark ? '화이트 테마로 전환' : '다크 테마로 전환');
+        themeColor.setAttribute('content', dark ? '#0b0b0d' : '#f6fbff');
+      };
+
+      applyTheme(document.documentElement.dataset.theme);
+
+      themeToggle.addEventListener('click', () => {
+        const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+        try {
+          localStorage.setItem('theme', next);
+        } catch (error) {}
+      });
+
       document.querySelectorAll('.tab-list').forEach((tabList) => {
         const tabs = Array.from(tabList.querySelectorAll('.tab'));
         const countTarget = tabList.dataset.countTarget && document.querySelector(tabList.dataset.countTarget);
